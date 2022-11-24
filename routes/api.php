@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\RequestSurveyController;
 use App\Http\Controllers\Api\SiteSurveyController;
 use App\Http\Controllers\Api\UserController;
@@ -43,4 +44,5 @@ Route::middleware(['auth:api', 'api'])->group(function () {
     Route::resource('customer', CustomerController::class);
     Route::resource('request-survey', RequestSurveyController::class);
     Route::resource('site-survey', SiteSurveyController::class);
+    Route::resource('post', PostController::class);
 });

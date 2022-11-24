@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CustomerSeeder::class,
             RequestSurveySeeder::class,
-            SiteSurveySeeder::class
+            SiteSurveySeeder::class,
+            PostSeeder::class
         ]);
     }
 }
