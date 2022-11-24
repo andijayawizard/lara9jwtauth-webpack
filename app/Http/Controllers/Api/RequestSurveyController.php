@@ -106,6 +106,7 @@ class RequestSurveyController extends Controller
      */
     public function destroy(RequestSurvey $requestSurvey)
     {
-        //
+        $data = $requestSurvey->delete('id');
+        return new RequestSurveyResource(['message' => 'delete success', 'data' => $data]);
     }
 }
