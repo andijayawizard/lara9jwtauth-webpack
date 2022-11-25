@@ -41,10 +41,10 @@ Route::middleware(['auth:api', 'api'])->group(function () {
         return $request->user();
     }]);
     Route::resource('user', UserController::class);
-    // Route::resource('customer', CustomerController::class);
+    // Route::resource('customer', CustomerController::class)->except(['index', 'show']);
     Route::resource('request-survey', RequestSurveyController::class);
     Route::resource('site-survey', SiteSurveyController::class);
-    // Route::resource('post', PostController::class);
+    // Route::resource('post', PostController::class)->except(['index', 'show']);
 });
 Route::resource('customer', CustomerController::class);
 Route::resource('post', PostController::class);
