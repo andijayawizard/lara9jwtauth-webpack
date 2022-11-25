@@ -37,12 +37,14 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth:api', 'api'])->group(function () {
-    Route::get('user', [AuthController::class, function (Request $request) {
+    Route::get('user-profile', [AuthController::class, function (Request $request) {
         return $request->user();
     }]);
     Route::resource('user', UserController::class);
-    Route::resource('customer', CustomerController::class);
+    // Route::resource('customer', CustomerController::class);
     Route::resource('request-survey', RequestSurveyController::class);
     Route::resource('site-survey', SiteSurveyController::class);
-    Route::resource('post', PostController::class);
+    // Route::resource('post', PostController::class);
 });
+Route::resource('customer', CustomerController::class);
+Route::resource('post', PostController::class);
